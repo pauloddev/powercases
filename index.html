@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#b00d18">
+<title>Power Cases</title>
+<meta name="description" content="Assistência técnica e acessórios para celular no Geisel, João Pessoa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;background:#b00d18}
+body{margin:0;background:#b00d18;color:#fff}
+.pc{--blur:22px;--status:#41e08c;--brand:#81020b;--brand-2:#a8101b;--glow:#ff4552;--bg:#b00d18;--ink:#ffffff;--muted:rgba(255,255,255,.74);--soft:rgba(255,255,255,.56);--line:rgba(255,255,255,.14);--ok:#41e08c;font-family:'Manrope',system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+.pc *{box-sizing:border-box}
+.pc h1,.pc h2,.pc h3,.pc .disp{font-family:'Unbounded',sans-serif;margin:0}
+.pc p{margin:0}
+.pc img,.pc video{display:block;max-width:100%}
+a{color:#fff}a:hover{color:#ffd0d4}
+.pc a{text-decoration:none}
+.pc ::selection{background:#ff4552;color:#fff}
+.pc :focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:12px}
+
+/* Glass */
+.glass{background:linear-gradient(140deg,rgba(255,255,255,.14),rgba(255,255,255,.035) 60%);border:1px solid rgba(255,255,255,.16);-webkit-backdrop-filter:blur(var(--blur,22px)) saturate(170%);backdrop-filter:blur(var(--blur,22px)) saturate(170%);box-shadow:0 30px 80px -30px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.28),inset 0 -1px 0 rgba(255,255,255,.04)}
+.glass-dark{background:linear-gradient(140deg,rgba(20,0,3,.55),rgba(20,0,3,.32));border:1px solid rgba(255,255,255,.14);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%)}
+
+/* Buttons */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:15px;letter-spacing:.01em;cursor:pointer;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,background .35s,border-color .35s;will-change:transform}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-120%);transition:transform .9s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.btn:hover::after{transform:translateX(120%)}
+.btn:hover{transform:translateY(-3px)}
+.btn:active{transform:translateY(0) scale(.97);transition-duration:.12s}
+.btn .arr{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.btn:hover .arr{transform:translateX(4px)}
+.btn-w{background:#fff;color:#81020b !important;box-shadow:0 14px 40px -12px rgba(255,255,255,.45)}
+.btn-w:hover{box-shadow:0 20px 50px -10px rgba(255,255,255,.6);color:#81020b}
+.btn-g{color:#fff !important}
+.btn-g:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.16)}
+.btn-r{background:linear-gradient(180deg,#b3121e,#81020b);color:#fff !important;border:1px solid rgba(255,255,255,.22);box-shadow:0 14px 40px -12px rgba(255,69,82,.6),inset 0 1px 0 rgba(255,255,255,.3)}
+.btn-r:hover{box-shadow:0 22px 54px -12px rgba(255,69,82,.8),inset 0 1px 0 rgba(255,255,255,.3)}
+.link-u{position:relative;color:#fff !important;font-weight:700}
+.link-u::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(.35);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.link-u:hover::after{transform:scaleX(1)}
+
+/* Nav */
+.nl{color:rgba(255,255,255,.78) !important;font-weight:600;font-size:14px;padding:10px 14px;border-radius:999px;transition:background .3s,color .3s}
+.nl:hover{background:rgba(255,255,255,.1);color:#fff !important}
+
+/* Cards */
+.lift{transition:transform .5s cubic-bezier(.2,.8,.2,1),border-color .5s,background .5s,box-shadow .5s}
+.lift:hover{transform:translateY(-8px);border-color:rgba(255,255,255,.32);box-shadow:0 40px 90px -30px rgba(0,0,0,.7),0 0 0 1px rgba(255,69,82,.18),inset 0 1px 0 rgba(255,255,255,.35)}
+.lift .ic{transition:transform .5s cubic-bezier(.2,.8,.2,1),background .5s}
+.lift:hover .ic{transform:rotate(-8deg) scale(1.08);background:#fff;color:#81020b}
+.zoom{overflow:hidden}
+.zoom img,.zoom video{transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.zoom:hover img,.zoom:hover video{transform:scale(1.06)}
+.svc{transition:background .4s,border-color .4s,transform .4s cubic-bezier(.2,.8,.2,1)}
+.svc:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);transform:translateX(6px)}
+.svc .n{transition:color .4s}
+.svc:hover .n{color:#ff8b93}
+
+/* Entrance + reveal */
+@keyframes up{from{opacity:0;transform:translateY(28px);filter:blur(6px)}to{opacity:1;transform:none;filter:blur(0)}}
+.up{animation:up 1s cubic-bezier(.2,.8,.2,1) both}
+.d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.3s}.d4{animation-delay:.42s}.d5{animation-delay:.56s}.d6{animation-delay:.7s}
+
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.float{animation:float 6s ease-in-out infinite}
+.float.f2{animation-duration:7.5s;animation-delay:-2s}
+.float.f3{animation-duration:8.5s;animation-delay:-4s}
+@keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.6);opacity:0}}
+.ping{animation:ping 2.2s cubic-bezier(0,0,.2,1) infinite}
+@keyframes ring{0%{transform:scale(.85);opacity:.55}100%{transform:scale(1.5);opacity:0}}
+.ring{animation:ring 3s cubic-bezier(.2,.8,.2,1) infinite}
+.ring.r2{animation-delay:1s}.ring.r3{animation-delay:2s}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin{animation:spin 26s linear infinite}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.08)}66%{transform:translate(-30px,20px) scale(.95)}}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:drift 22s ease-in-out infinite}
+@keyframes marq{to{transform:translateX(-50%)}}
+.marq{display:flex;width:max-content;animation:marq 38s linear infinite}
+.marq-wrap:hover .marq{animation-play-state:paused}
+.orb{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.orb:hover{transform:scale(1.04)}
+.orb:active{transform:scale(.97)}
+.orb .pw{transition:filter .5s, transform .6s cubic-bezier(.2,.8,.2,1)}
+.orb:hover .pw{filter:drop-shadow(0 0 22px #ff4552) drop-shadow(0 0 48px rgba(255,69,82,.6));transform:rotate(-6deg)}
+
+/* Carousel */
+.track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 24px 28px;scrollbar-width:none;overscroll-behavior-x:contain}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 clamp(250px,24vw,310px);scroll-snap-align:start}
+.cbtn{width:52px;height:52px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;transition:transform .3s cubic-bezier(.2,.8,.2,1),background .3s}
+.cbtn:hover{transform:scale(1.08);background:rgba(255,255,255,.2)}
+.cbtn:active{transform:scale(.94)}
+.wa-fab{transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.wa-fab:hover{transform:scale(1.08) rotate(-6deg)}
+
+@media (max-width:900px){.navlinks{display:none !important}}
+@media (max-width:760px){
+ .g-feat{grid-template-columns:1fr 1fr !important;grid-template-rows:auto !important}
+ .g-feat>.big{grid-column:1/-1 !important;grid-row:auto !important}
+ .hide-m{display:none !important}
+}
+@media (hover:none){.lift:hover,.btn:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.pc *,.pc *::before,.pc *::after{animation:none !important;transition:none !important}.js-rv .rv{opacity:1 !important;transform:none !important}}
+
+.wrap{padding-left:max(20px,env(safe-area-inset-left,0px)) !important;padding-right:max(20px,env(safe-area-inset-right,0px)) !important}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:70;background:#b00d18}
+@keyframes rvIn{from{opacity:0;transform:translateY(46px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes rvL{from{opacity:0;transform:translateX(-56px)}to{opacity:1;transform:none}}
+@keyframes rvR{from{opacity:0;transform:translateX(56px)}to{opacity:1;transform:none}}
+@keyframes rvS{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){
+ .rv{animation:rvIn linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+ .rv.rv-l{animation-name:rvL}.rv.rv-r{animation-name:rvR}.rv.rv-s{animation-name:rvS}
+ .rv.s2{animation-range:entry 4% entry 76%}.rv.s3{animation-range:entry 8% entry 82%}.rv.s4{animation-range:entry 12% entry 88%}
+}
+.hr{display:flex;flex-direction:column;gap:6px;padding:14px 14px 12px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.hr:hover{transform:translateY(-4px)}
+.hr.closed{background:rgba(0,0,0,.18);border:1px dashed rgba(255,255,255,.18);color:rgba(255,255,255,.6)}
+.hr.today{background:#fff;color:#81020b;border:1px solid #fff;box-shadow:0 18px 40px -16px rgba(255,255,255,.5)}
+.hr.today span:last-child::before{content:"Hoje"}
+
+.ic2{flex:none;width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);transition:background .4s,color .4s,transform .4s cubic-bezier(.2,.8,.2,1)}
+.svc:hover .ic2{background:#fff;color:#c4101c;transform:rotate(-6deg) scale(1.06)}
+/* Vivid red buttons */
+.btn-w{background:linear-gradient(180deg,#ff2a36,#e3101e);color:#fff !important;border:1px solid rgba(255,255,255,.28);box-shadow:0 14px 36px -10px rgba(239,22,38,.75),inset 0 1px 0 rgba(255,255,255,.35)}
+.btn-w:hover{color:#fff !important;box-shadow:0 22px 50px -10px rgba(255,42,54,.9),inset 0 1px 0 rgba(255,255,255,.35)}
+.btn-g{background:rgba(239,22,38,.18) !important;border:1px solid rgba(255,90,100,.55) !important;color:#fff !important}
+.btn-g:hover{background:rgba(239,22,38,.32) !important;border-color:rgba(255,120,128,.8) !important}
+.btn-r{background:linear-gradient(180deg,#ff2a36,#e3101e)}
+
+.pc{--glow:#fff}
+.glass{background:linear-gradient(140deg,rgba(255,255,255,.2),rgba(255,255,255,.06) 60%);border-color:rgba(255,255,255,.26)}
+.glass-dark{background:linear-gradient(140deg,rgba(90,0,8,.5),rgba(90,0,8,.28))}
+.btn-w{background:linear-gradient(180deg,#ff3442,#f0101f);border:1.5px solid rgba(255,255,255,.7);box-shadow:0 16px 38px -12px rgba(80,0,6,.7),inset 0 1px 0 rgba(255,255,255,.45)}
+.btn-w:hover{box-shadow:0 24px 52px -12px rgba(80,0,6,.8),0 0 0 4px rgba(255,255,255,.18),inset 0 1px 0 rgba(255,255,255,.45)}
+.btn-g{background:rgba(255,255,255,.14) !important;border:1.5px solid rgba(255,255,255,.55) !important}
+.btn-g:hover{background:rgba(255,255,255,.24) !important;border-color:#fff !important}
+
+/* ===== Inverted bands ===== */
+.band{position:relative;margin-inline:clamp(8px,1.4vw,20px);border-radius:clamp(28px,4vw,48px);overflow:hidden;isolation:isolate}
+.band-white{background:#fff;color:#c8101c;box-shadow:0 40px 100px -40px rgba(60,0,4,.55)}
+.band-white h2{color:#c8101c}
+.chip-w{background:#fff5f5;border:1.5px solid #f3c2c6;color:#b00d18;transition:background .35s,border-color .35s,translate .35s cubic-bezier(.2,.8,.2,1)}
+.chip-w:hover{background:#e3101e;border-color:#e3101e;color:#fff;translate:0 -3px}
+.chip-w:hover span{background:#fff !important}
+.band-white .zoom{box-shadow:0 30px 70px -30px rgba(120,0,10,.45)}
+.band-black{background:radial-gradient(120% 80% at 100% 0%,rgba(227,16,30,.28),transparent 55%),radial-gradient(90% 70% at 0% 100%,rgba(227,16,30,.18),transparent 60%),#0a0a0b;color:#fff;box-shadow:0 40px 100px -40px rgba(0,0,0,.7)}
+.band-black .glass{background:linear-gradient(140deg,rgba(255,255,255,.12),rgba(255,255,255,.03) 60%);border-color:rgba(255,255,255,.14)}
+.band-black .cbtn{background:rgba(255,255,255,.08)}
+.band-black::after,.band-white::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.22)}
+
+/* ===== Scroll-driven transitions (no transform conflicts with hover) ===== */
+@keyframes rvIn{from{opacity:0;translate:0 46px;scale:.98}to{opacity:1;translate:0 0;scale:1}}
+@keyframes rvL{from{opacity:0;translate:-56px 0}to{opacity:1;translate:0 0}}
+@keyframes rvR{from{opacity:0;translate:56px 0}to{opacity:1;translate:0 0}}
+@keyframes rvS{from{opacity:0;scale:.9}to{opacity:1;scale:1}}
+@keyframes txtIn{from{opacity:0;translate:0 .6em;clip-path:inset(0 0 100% 0);letter-spacing:.02em}to{opacity:1;translate:0 0;clip-path:inset(0 0 -20% 0)}}
+@keyframes btnIn{from{opacity:0;scale:.8}to{opacity:1;scale:1}}
+@keyframes bandIn{from{scale:.94;opacity:.4;border-radius:120px}to{scale:1;opacity:1}}
+@supports (animation-timeline: view()){
+ .band{animation:bandIn linear both;animation-timeline:view();animation-range:entry 0% entry 45%}
+ .pc h2{animation:txtIn linear both;animation-timeline:view();animation-range:entry 5% entry 60%}
+ .pc .btn,.pc .cbtn{animation:btnIn linear both;animation-timeline:view();animation-range:entry 0% entry 80%}
+ .pc nav .btn,.pc .up .btn{animation:none}
+ .chip-w,.svc,.hr{animation:rvIn linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+}
+</style>
+</head>
+<body>
+<div class="pc" style="position: relative; overflow: hidden; background: #b00d18; min-height: 100vh">
+
+<!-- ========== AMBIENT BACKGROUND ========== -->
+<div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; z-index: 0">
+<div class="blob" style="width: 900px; height: 900px; left: -260px; top: -320px; background: radial-gradient(circle, rgba(255,58,70,.85), rgba(176,13,24,0) 65%)"></div>
+<div class="blob" style="width: 760px; height: 760px; right: -240px; top: 180px; background: radial-gradient(circle, rgba(255,120,128,.5), rgba(176,13,24,0) 65%); animation-delay: -6s"></div>
+<div class="blob" style="width: 1000px; height: 1000px; left: 30%; top: 1700px; background: radial-gradient(circle, rgba(120,4,14,.55), rgba(176,13,24,0) 65%); animation-delay: -10s"></div>
+<div class="blob" style="width: 800px; height: 800px; left: -300px; top: 3300px; background: radial-gradient(circle, rgba(255,110,118,.45), rgba(176,13,24,0) 65%); animation-delay: -3s"></div>
+<div class="blob" style="width: 900px; height: 900px; right: -300px; top: 4700px; background: radial-gradient(circle, rgba(255,58,70,.7), rgba(176,13,24,0) 65%); animation-delay: -14s"></div>
+<div class="blob" style="width: 900px; height: 900px; left: -200px; top: 6300px; background: radial-gradient(circle, rgba(255,58,70,.7), rgba(176,13,24,0) 65%); animation-delay: -8s"></div>
+<div class="blob" style="width: 800px; height: 800px; right: -260px; top: 7800px; background: radial-gradient(circle, rgba(255,110,118,.45), rgba(176,13,24,0) 65%); animation-delay: -12s"></div>
+<div class="blob" style="width: 1000px; height: 1000px; left: 20%; top: 9300px; background: radial-gradient(circle, rgba(120,4,14,.55), rgba(176,13,24,0) 65%); animation-delay: -5s"></div>
+<div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 64px 64px; mask-image: linear-gradient(180deg, #000 0%, transparent 12%, transparent 88%, #000 100%); -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 10%)"></div>
+</div>
+
+<div style="position: relative; z-index: 1">
+
+<!-- ========== NAV ========== -->
+<header style="position: sticky; top: calc(env(safe-area-inset-top, 0px) + 10px); z-index: 50; padding: 14px 16px 0">
+<nav class="glass up" aria-label="Principal" style="max-width: 1240px; margin: 0 auto; border-radius: 999px; padding: 10px 10px 10px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#topo" aria-label="Power Cases — início" style="display: flex; align-items: center; gap: 12px">
+<svg width="30" height="40" viewBox="0 0 60 80" aria-hidden="true"><g transform="rotate(-10 30 40)"><rect x="12" y="6" width="36" height="68" rx="8" fill="#a8101b" stroke="#fff" stroke-width="4.5"></rect><path d="M24.5 34.5a9 9 0 1 0 11 0" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"></path><line x1="30" y1="29" x2="30" y2="40" stroke="#fff" stroke-width="4" stroke-linecap="round"></line></g></svg>
+<span style="display: flex; flex-direction: column; line-height: 1">
+<span class="disp" style="font-size: 18px; font-weight: 700; letter-spacing: .02em">POWER</span>
+<span style="font-size: 10px; font-weight: 700; letter-spacing: .42em; color: rgba(255,255,255,.75); margin-top: 3px">CASES</span>
+</span>
+</a>
+<div class="navlinks" style="display: flex; align-items: center; gap: 2px">
+<a class="nl" href="#reparos">Reparos</a>
+<a class="nl" href="#vitrine">Vitrine</a>
+<a class="nl" href="#garrafas">Garrafas</a>
+<a class="nl" href="#sobre">Sobre</a>
+<a class="nl" href="#localizacao">Localização</a>
+</div>
+<a class="btn btn-w" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vim%20pelo%20site." target="_blank" rel="noopener" style="min-height: 46px; padding: 0 20px; font-size: 14px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.4-4.2A8.5 8.5 0 1 1 8 19.4z"></path><path d="M9 9.5c.3 2 2.2 4.3 4.6 5 .8.2 1.7-.5 1.9-1.2l-1.8-.9-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-.9-1.8c-.7.2-1.4 1-1.2 1.5z" fill="currentColor" stroke="none"></path></svg>
+<span>WhatsApp</span>
+</a>
+</nav>
+</header>
+
+<!-- ========== HERO ========== -->
+<section id="topo" style="padding: clamp(48px, 7vw, 96px) 0 clamp(64px, 8vw, 112px)">
+<div class="wrap" style="max-width: 1240px; margin: 0 auto; padding-block: 0; display: flex; flex-wrap: wrap; align-items: center; gap: clamp(40px, 5vw, 72px)">
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 26px">
+<div class="glass up d1" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 8px 16px 8px 12px; font-size: 13px; font-weight: 700">
+<span style="position: relative; width: 10px; height: 10px; display: inline-block">
+<span class="ping" style="position: absolute; inset: 0; border-radius: 50%; background: var(--status)"></span>
+<span style="position: absolute; inset: 0; border-radius: 50%; background: var(--status)"></span>
+</span>
+<span><span class="js-status">Seg a Sex 9h–19h · Sáb 9h–16h</span></span>
+</div>
+<p class="up d2" style="font-size: 13px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.7)">Assistência técnica &amp; acessórios · Geisel, João Pessoa</p>
+<h1 class="up d3" style="font-size: clamp(38px, 5.6vw, 76px); line-height: 1.02; font-weight: 700; letter-spacing: -.035em">Conserto de celular <span style="background: linear-gradient(90deg, #fff, #ffe3e5 50%, #ffc2c7); -webkit-background-clip: text; background-clip: text; color: transparent">com transparência.</span> Acessórios com estilo.</h1>
+<p class="up d4" style="font-size: clamp(16px, 1.4vw, 19px); line-height: 1.6; color: rgba(255,255,255,.78); max-width: 560px">Na Power Cases você vê o problema, aprova o orçamento e só então a gente começa. E ainda sai com a case, a película e a garrafa que combinam com você.</p>
+<div class="up d5" style="display: flex; flex-wrap: wrap; gap: 12px">
+<a class="btn btn-w" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Quero%20um%20or%C3%A7amento%20de%20conserto.%20Meu%20aparelho%20%C3%A9%3A%20" target="_blank" rel="noopener">Pedir orçamento no WhatsApp <span class="arr" aria-hidden="true">→</span></a>
+<a class="btn btn-g glass" href="#localizacao">Ver como chegar</a>
+</div>
+<ul class="up d6" style="list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 14px; color: rgba(255,255,255,.8); font-weight: 600">
+<li style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg>Orçamento antes do serviço</li>
+<li style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg>Entrega em JP e região</li>
+<li style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg>Garrafas personalizadas</li>
+</ul>
+</div>
+
+<div class="hero-vis up d3" style="flex: 1 1 400px; min-width: 0; width: 100%; max-width: 520px; margin-inline: auto; position: relative; aspect-ratio: 1 / 1.06">
+<figure class="glass float f2 zoom" style="margin: 0; position: absolute; left: 0; top: 0; width: 58%; aspect-ratio: 4 / 5; border-radius: 30px; padding: 8px; z-index: 1">
+<img src="media/hero_cases.jpg" alt="Cases de couro em várias cores ao lado da sacola Power" width="1080" height="1350" style="width: 100%; height: 100%; object-fit: cover; border-radius: 23px">
+</figure>
+<figure class="glass float f3 zoom" style="margin: 0; position: absolute; right: 0; bottom: 0; width: 58%; aspect-ratio: 4 / 5; border-radius: 30px; padding: 8px; z-index: 2">
+<img src="media/hero_parede.jpg" alt="Parede da loja repleta de capinhas coloridas" width="1080" height="1350" style="width: 100%; height: 100%; object-fit: cover; border-radius: 23px">
+</figure>
+</div>
+</div>
+</section>
+
+<!-- ========== CHAMADAS ========== -->
+<section aria-label="Destaques" style="padding: 0 0 clamp(80px, 9vw, 128px)">
+<div class="wrap" style="max-width: 1240px; margin: 0 auto; padding-block: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 18px">
+<a class="glass lift rv s1" href="#garrafas" style="border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 18px; min-height: 280px; color: #fff">
+<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<span class="ic" style="width: 52px; height: 52px; border-radius: 16px; background: rgba(255,255,255,.14); display: flex; align-items: center; justify-content: center; color: #fff"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2.5h4v3h-4zM9 5.5h6l1 3v11.5a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 8 20V8.5z"></path><path d="M8 12h8M8 16h8"></path></svg></span>
+<span class="disp" style="font-size: 13px; color: rgba(255,255,255,.5)">01</span>
+</div>
+<h3 style="font-size: 21px; font-weight: 600; line-height: 1.2">Garrafas personalizadas</h3>
+<p style="color: rgba(255,255,255,.74); line-height: 1.6; font-size: 15px">Com nome, desenho ou a marca da sua empresa. O presente que ninguém esquece.</p>
+<span class="link-u" style="margin-top: auto; align-self: flex-start; font-size: 14px">Ver garrafas →</span>
+</a>
+<a class="glass lift rv s2" href="#reparos" style="border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 18px; min-height: 280px; color: #fff">
+<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<span class="ic" style="width: 52px; height: 52px; border-radius: 16px; background: rgba(255,255,255,.14); display: flex; align-items: center; justify-content: center; color: #fff"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"></path><circle cx="12" cy="12" r="3"></circle></svg></span>
+<span class="disp" style="font-size: 13px; color: rgba(255,255,255,.5)">02</span>
+</div>
+<h3 style="font-size: 21px; font-weight: 600; line-height: 1.2">Assistência com transparência</h3>
+<p style="color: rgba(255,255,255,.74); line-height: 1.6; font-size: 15px">Você vê o defeito, entende o valor e decide. Nada é feito sem a sua aprovação.</p>
+<span class="link-u" style="margin-top: auto; align-self: flex-start; font-size: 14px">Ver serviços →</span>
+</a>
+<a class="glass lift rv s3" href="#vitrine" style="border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 18px; min-height: 280px; color: #fff">
+<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<span class="ic" style="width: 52px; height: 52px; border-radius: 16px; background: rgba(255,255,255,.14); display: flex; align-items: center; justify-content: center; color: #fff"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"></rect><rect x="8.5" y="5" width="4.5" height="4.5" rx="1.2"></rect><path d="M12 15.5l1 1.5h1.8l-1.4 1 .5 1.8-1.9-1.2-1.9 1.2.5-1.8-1.4-1h1.8z" fill="currentColor" stroke="none"></path></svg></span>
+<span class="disp" style="font-size: 13px; color: rgba(255,255,255,.5)">03</span>
+</div>
+<h3 style="font-size: 21px; font-weight: 600; line-height: 1.2">Cases lindas e estilosas</h3>
+<p style="color: rgba(255,255,255,.74); line-height: 1.6; font-size: 15px">Do clássico ao que chama atenção: cores, estampas e proteção para o seu modelo.</p>
+<span class="link-u" style="margin-top: auto; align-self: flex-start; font-size: 14px">Ver vitrine →</span>
+</a>
+<a class="glass lift rv s4" href="#entregas" style="border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 18px; min-height: 280px; color: #fff">
+<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<span class="ic" style="width: 52px; height: 52px; border-radius: 16px; background: rgba(255,255,255,.14); display: flex; align-items: center; justify-content: center; color: #fff"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.5h11v10h-11zM13.5 10h4.5l3.5 3.5v3h-8"></path><circle cx="6.5" cy="18" r="2"></circle><circle cx="17.5" cy="18" r="2"></circle></svg></span>
+<span class="disp" style="font-size: 13px; color: rgba(255,255,255,.5)">04</span>
+</div>
+<h3 style="font-size: 21px; font-weight: 600; line-height: 1.2">Realizamos entregas</h3>
+<p style="color: rgba(255,255,255,.74); line-height: 1.6; font-size: 15px">João Pessoa, Santa Rita, Bayeux e Cabedelo. Peça pelo WhatsApp e receba onde estiver.</p>
+<span class="link-u" style="margin-top: auto; align-self: flex-start; font-size: 14px">Ver cidades →</span>
+</a>
+</div>
+</section>
+
+<!-- ========== TEMOS TUDO ========== -->
+<section aria-labelledby="t-tudo" class="band band-white" style="padding: clamp(72px, 8vw, 112px) 0">
+<div class="wrap" style="max-width: 1240px; margin: 0 auto; padding-block: 0; display: flex; flex-wrap: wrap; align-items: center; gap: clamp(32px, 4vw, 56px)">
+<div class="rv rv-l zoom" style="flex: 1 1 480px; min-width: 0; position: relative; border-radius: 36px; aspect-ratio: 1 / 1">
+<img src="media/parede.jpg" alt="Parede da Power Cases repleta de capinhas e acessórios" style="width: 100%; height: 100%; object-fit: cover; border-radius: 36px">
+</div>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<p class="rv" style="font-size: 13px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #e3101e">Acessórios</p>
+<h2 id="t-tudo" class="rv s1" style="font-size: clamp(32px, 4.2vw, 56px); line-height: 1.05; font-weight: 700; letter-spacing: -.03em">Temos tudo que seu aparelho precisa.</h2>
+<p class="rv s2" style="font-size: 17px; line-height: 1.65; color: #5a1218">Chegou com o celular, sai com ele protegido, carregado e com a sua cara. Se não tiver o seu modelo na vitrine, a gente procura pra você.</p>
+<div class="rv s3" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div class="chip-w" style="border-radius: 18px; padding: 16px 18px; font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 10px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #e3101e; flex: none"></span>Capas e cases</div>
+<div class="chip-w" style="border-radius: 18px; padding: 16px 18px; font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 10px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #e3101e; flex: none"></span>Películas</div>
+<div class="chip-w" style="border-radius: 18px; padding: 16px 18px; font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 10px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #e3101e; flex: none"></span>Carregadores e cabos</div>
+<div class="chip-w" style="border-radius: 18px; padding: 16px 18px; font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 10px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #e3101e; flex: none"></span>Fones de ouvido</div>
+<div class="chip-w" style="border-radius: 18px; padding: 16px 18px; font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 10px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #e3101e; flex: none"></span>Garrafas térmicas</div>
+<div class="chip-w" style="border-radius: 18px; padding: 16px 18px; font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 10px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #e3101e; flex: none"></span>Acessórios em geral</div>
+</div>
+<div class="rv s4" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
+<a class="btn btn-w" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Voc%C3%AAs%20t%C3%AAm%20case%20para%20o%20meu%20modelo%3F%20Meu%20celular%20%C3%A9%3A%20" target="_blank" rel="noopener">Perguntar pelo meu modelo <span class="arr" aria-hidden="true">→</span></a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ========== MARQUEE ========== -->
+<div class="marq-wrap" aria-hidden="true" style="border-top: 1px solid rgba(255,255,255,.1); border-bottom: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.08); overflow: hidden; padding: 22px 0">
+<div class="marq disp" style="gap: 48px; font-size: clamp(22px, 2.6vw, 34px); font-weight: 600; white-space: nowrap; letter-spacing: -.01em">
+<span>Troca de tela</span><span style="color: rgba(255,255,255,.55)">✦</span><span>Cases</span><span style="color: rgba(255,255,255,.55)">✦</span><span>Troca de bateria</span><span style="color: rgba(255,255,255,.55)">✦</span><span>Películas</span><span style="color: rgba(255,255,255,.55)">✦</span><span>Garrafas personalizadas</span><span style="color: rgba(255,255,255,.55)">✦</span><span>Carregadores</span><span style="color: rgba(255,255,255,.55)">✦</span><span>Fones</span><span style="color: rgba(255,255,255,.55)">✦</span>
+<span>Troca de tela</span><span style="color: rgba(255,255,255,.55)">✦</span><span>Cases</span><span style="color: rgba(255,255,255,.55)">✦</span><span>Troca de bateria</span><span style="color: rgba(255,255,255,.55)">✦</span><span>Películas</span><span style="color: rgba(255,255,255,.55)">✦</span><span>Garrafas personalizadas</span><span style="color: rgba(255,255,255,.55)">✦</span><span>Carregadores</span><span style="color: rgba(255,255,255,.55)">✦</span><span>Fones</span><span style="color: rgba(255,255,255,.55)">✦</span>
+</div>
+</div>
+
+<!-- ========== VITRINE (CARROSSEL) ========== -->
+<section class="band band-black" id="vitrine" aria-labelledby="t-vitrine" style="padding: clamp(80px, 9vw, 128px) 0">
+<div class="wrap" style="max-width: 1240px; margin: 0 auto; padding-block: 0; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 36px">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 680px">
+<p class="rv" style="font-size: 13px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #ff4d5a">Vitrine em movimento</p>
+<h2 id="t-vitrine" class="rv s1" style="font-size: clamp(32px, 4.2vw, 56px); line-height: 1.05; font-weight: 700; letter-spacing: -.03em">Chegou na loja, aparece aqui.</h2>
+<p class="rv s2" style="font-size: 17px; line-height: 1.65; color: rgba(255,255,255,.76)">Cases, fones, carregadores e garrafas direto da nossa vitrine. Gostou de algum? Toque e pergunte pelo seu modelo.</p>
+</div>
+<div class="rv s3" style="display: flex; gap: 10px">
+<button class="cbtn glass" type="button" aria-label="Vídeos anteriores" data-dir="-1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button>
+<button class="cbtn glass" type="button" aria-label="Próximos vídeos" data-dir="1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>
+</div>
+</div>
+<div style="max-width: 1288px; margin: 0 auto">
+<div class="track" id="track" role="region" aria-label="Carrossel de vídeos de produtos" tabindex="0">
+
+<a class="slide glass lift" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vi%20no%20site%20e%20quero%20saber%20mais%20sobre%3A%20Case%20Angel" target="_blank" rel="noopener" style="border-radius: 28px; padding: 8px; display: flex; flex-direction: column; color: #fff">
+<div class="zoom" style="position: relative; border-radius: 22px; aspect-ratio: 1 / 1; background: #8e0a14">
+<video src="media/v14.mp4" poster="media/v14.jpg" muted loop playsinline autoplay preload="none" aria-label="Case Angel" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px"></video>
+</div>
+<div style="padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff4d5a">Cases</span>
+<span style="font-weight: 800; font-size: 16px">Case Angel</span>
+<span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72)">Transparente com flores e borda de strass. Delicada e chamativa.</span>
+</div>
+</a>
+
+<a class="slide glass lift" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vi%20no%20site%20e%20quero%20saber%20mais%20sobre%3A%20Garrafa%20de%20la%C3%A7os" target="_blank" rel="noopener" style="border-radius: 28px; padding: 8px; display: flex; flex-direction: column; color: #fff">
+<div class="zoom" style="position: relative; border-radius: 22px; aspect-ratio: 1 / 1; background: #8e0a14">
+<video src="media/v27.mp4" poster="media/v27.jpg" muted loop playsinline autoplay preload="none" aria-label="Garrafa de laços" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px"></video>
+</div>
+<div style="padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff4d5a">Garrafas</span>
+<span style="font-weight: 800; font-size: 16px">Garrafa de laços</span>
+<span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72)">Rosa com estampa de laços e tampa colorida. Linda para o dia a dia.</span>
+</div>
+</a>
+
+<a class="slide glass lift" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vi%20no%20site%20e%20quero%20saber%20mais%20sobre%3A%20Case%20degrad%C3%AA%20com%20anel" target="_blank" rel="noopener" style="border-radius: 28px; padding: 8px; display: flex; flex-direction: column; color: #fff">
+<div class="zoom" style="position: relative; border-radius: 22px; aspect-ratio: 1 / 1; background: #8e0a14">
+<video src="media/v20.mp4" poster="media/v20.jpg" muted loop playsinline autoplay preload="none" aria-label="Case degradê com anel" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px"></video>
+</div>
+<div style="padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff4d5a">Cases</span>
+<span style="font-weight: 800; font-size: 16px">Case degradê com anel</span>
+<span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72)">Degradê laranja com anel que vira suporte. Estilo e praticidade.</span>
+</div>
+</a>
+
+<a class="slide glass lift" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vi%20no%20site%20e%20quero%20saber%20mais%20sobre%3A%20Fone%20Neckband%20Hwave" target="_blank" rel="noopener" style="border-radius: 28px; padding: 8px; display: flex; flex-direction: column; color: #fff">
+<div class="zoom" style="position: relative; border-radius: 22px; aspect-ratio: 1 / 1; background: #8e0a14">
+<video src="media/v16.mp4" poster="media/v16.jpg" muted loop playsinline autoplay preload="none" aria-label="Fone Neckband Hwave" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px"></video>
+</div>
+<div style="padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff4d5a">Áudio</span>
+<span style="font-weight: 800; font-size: 16px">Fone Neckband Hwave</span>
+<span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72)">Fone de condução aberta com estojo. Leve para treino e rotina.</span>
+</div>
+</a>
+
+<a class="slide glass lift" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vi%20no%20site%20e%20quero%20saber%20mais%20sobre%3A%20Case%20cora%C3%A7%C3%B5es%203D" target="_blank" rel="noopener" style="border-radius: 28px; padding: 8px; display: flex; flex-direction: column; color: #fff">
+<div class="zoom" style="position: relative; border-radius: 22px; aspect-ratio: 1 / 1; background: #8e0a14">
+<video src="media/v22.mp4" poster="media/v22.jpg" muted loop playsinline autoplay preload="none" aria-label="Case corações 3D" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px"></video>
+</div>
+<div style="padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff4d5a">Cases</span>
+<span style="font-weight: 800; font-size: 16px">Case corações 3D</span>
+<span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72)">Lilás com corações em relevo. Fofa e gostosa de segurar.</span>
+</div>
+</a>
+
+<a class="slide glass lift" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vi%20no%20site%20e%20quero%20saber%20mais%20sobre%3A%20Case%20cl%C3%A1ssica%20colorida" target="_blank" rel="noopener" style="border-radius: 28px; padding: 8px; display: flex; flex-direction: column; color: #fff">
+<div class="zoom" style="position: relative; border-radius: 22px; aspect-ratio: 1 / 1; background: #8e0a14">
+<video src="media/v17.mp4" poster="media/v17.jpg" muted loop playsinline autoplay preload="none" aria-label="Case clássica colorida" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px"></video>
+</div>
+<div style="padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff4d5a">Cases</span>
+<span style="font-weight: 800; font-size: 16px">Case clássica colorida</span>
+<span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72)">Toque macio e proteção de câmera, em várias cores.</span>
+</div>
+</a>
+
+<a class="slide glass lift" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vi%20no%20site%20e%20quero%20saber%20mais%20sobre%3A%20Case%20la%C3%A7os%20e%20cerejas" target="_blank" rel="noopener" style="border-radius: 28px; padding: 8px; display: flex; flex-direction: column; color: #fff">
+<div class="zoom" style="position: relative; border-radius: 22px; aspect-ratio: 1 / 1; background: #8e0a14">
+<video src="media/v18.mp4" poster="media/v18.jpg" muted loop playsinline autoplay preload="none" aria-label="Case laços e cerejas" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px"></video>
+</div>
+<div style="padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff4d5a">Cases</span>
+<span style="font-weight: 800; font-size: 16px">Case laços e cerejas</span>
+<span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72)">Estampa romântica com proteção para as lentes.</span>
+</div>
+</a>
+
+<a class="slide glass lift" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vi%20no%20site%20e%20quero%20saber%20mais%20sobre%3A%20Case%20vinho%20magn%C3%A9tica" target="_blank" rel="noopener" style="border-radius: 28px; padding: 8px; display: flex; flex-direction: column; color: #fff">
+<div class="zoom" style="position: relative; border-radius: 22px; aspect-ratio: 1 / 1; background: #8e0a14">
+<video src="media/v19.mp4" poster="media/v19.jpg" muted loop playsinline autoplay preload="none" aria-label="Case vinho magnética" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px"></video>
+</div>
+<div style="padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff4d5a">Cases</span>
+<span style="font-weight: 800; font-size: 16px">Case vinho magnética</span>
+<span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72)">Acabamento fosco com anel magnético. Elegância total.</span>
+</div>
+</a>
+
+<a class="slide glass lift" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vi%20no%20site%20e%20quero%20saber%20mais%20sobre%3A%20Kit%20de%20carregador" target="_blank" rel="noopener" style="border-radius: 28px; padding: 8px; display: flex; flex-direction: column; color: #fff">
+<div class="zoom" style="position: relative; border-radius: 22px; aspect-ratio: 1 / 1; background: #8e0a14">
+<video src="media/v23.mp4" poster="media/v23.jpg" muted loop playsinline autoplay preload="none" aria-label="Kit de carregador" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px"></video>
+</div>
+<div style="padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff4d5a">Carregadores</span>
+<span style="font-weight: 800; font-size: 16px">Kit de carregador</span>
+<span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72)">Fonte e cabo prontos para usar. Carregue sem dor de cabeça.</span>
+</div>
+</a>
+
+<a class="slide glass lift" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vi%20no%20site%20e%20quero%20saber%20mais%20sobre%3A%20Case%20degrad%C3%AA%20azul" target="_blank" rel="noopener" style="border-radius: 28px; padding: 8px; display: flex; flex-direction: column; color: #fff">
+<div class="zoom" style="position: relative; border-radius: 22px; aspect-ratio: 1 / 1; background: #8e0a14">
+<video src="media/v21.mp4" poster="media/v21.jpg" muted loop playsinline autoplay preload="none" aria-label="Case degradê azul" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px"></video>
+</div>
+<div style="padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff4d5a">Cases</span>
+<span style="font-weight: 800; font-size: 16px">Case degradê azul</span>
+<span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72)">Azul translúcido com anel suporte. Destaque no bolso.</span>
+</div>
+</a>
+
+<a class="slide glass lift" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vi%20no%20site%20e%20quero%20saber%20mais%20sobre%3A%20Case%20porta-gloss" target="_blank" rel="noopener" style="border-radius: 28px; padding: 8px; display: flex; flex-direction: column; color: #fff">
+<div class="zoom" style="position: relative; border-radius: 22px; aspect-ratio: 1 / 1; background: #8e0a14">
+<video src="media/v24.mp4" poster="media/v24.jpg" muted loop playsinline autoplay preload="none" aria-label="Case porta-gloss" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px"></video>
+</div>
+<div style="padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff4d5a">Cases</span>
+<span style="font-weight: 800; font-size: 16px">Case porta-gloss</span>
+<span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72)">Case com encaixe para o gloss. Para modelos do iPhone 11 ao 17.</span>
+</div>
+</a>
+
+<a class="slide glass lift" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vi%20no%20site%20e%20quero%20saber%20mais%20sobre%3A%20Case%20morangos" target="_blank" rel="noopener" style="border-radius: 28px; padding: 8px; display: flex; flex-direction: column; color: #fff">
+<div class="zoom" style="position: relative; border-radius: 22px; aspect-ratio: 1 / 1; background: #8e0a14">
+<video src="media/v26.mp4" poster="media/v26.jpg" muted loop playsinline autoplay preload="none" aria-label="Case morangos" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px"></video>
+</div>
+<div style="padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff4d5a">Cases</span>
+<span style="font-weight: 800; font-size: 16px">Case morangos</span>
+<span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72)">Estampa de morangos com brilho. Últimas unidades na vitrine.</span>
+</div>
+</a>
+
+<a class="slide glass lift" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vi%20no%20site%20e%20quero%20saber%20mais%20sobre%3A%20Case%20estampada%20transparente" target="_blank" rel="noopener" style="border-radius: 28px; padding: 8px; display: flex; flex-direction: column; color: #fff">
+<div class="zoom" style="position: relative; border-radius: 22px; aspect-ratio: 1 / 1; background: #8e0a14">
+<video src="media/v25.mp4" poster="media/v25.jpg" muted loop playsinline autoplay preload="none" aria-label="Case estampada transparente" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px"></video>
+</div>
+<div style="padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff4d5a">Cases</span>
+<span style="font-weight: 800; font-size: 16px">Case estampada transparente</span>
+<span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72)">Alta proteção contra impacto. Para iPhone 13, 14 e 15.</span>
+</div>
+</a>
+
+<a class="slide glass lift" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vi%20no%20site%20e%20quero%20saber%20mais%20sobre%3A%20Case%20fosca%20com%20anel" target="_blank" rel="noopener" style="border-radius: 28px; padding: 8px; display: flex; flex-direction: column; color: #fff">
+<div class="zoom" style="position: relative; border-radius: 22px; aspect-ratio: 1 / 1; background: #8e0a14">
+<video src="media/v28.mp4" poster="media/v28.jpg" muted loop playsinline autoplay preload="none" aria-label="Case fosca com anel" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px"></video>
+</div>
+<div style="padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff4d5a">Cases</span>
+<span style="font-weight: 800; font-size: 16px">Case fosca com anel</span>
+<span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72)">Degradê suave e anel giratório para assistir sem segurar.</span>
+</div>
+</a>
+
+<a class="slide glass lift" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vi%20no%20site%20e%20quero%20saber%20mais%20sobre%3A%20Case%20transparente" target="_blank" rel="noopener" style="border-radius: 28px; padding: 8px; display: flex; flex-direction: column; color: #fff">
+<div class="zoom" style="position: relative; border-radius: 22px; aspect-ratio: 1 / 1; background: #8e0a14">
+<video src="media/v15.mp4" poster="media/v15.jpg" muted loop playsinline autoplay preload="none" aria-label="Case transparente" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px"></video>
+</div>
+<div style="padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff4d5a">Cases</span>
+<span style="font-weight: 800; font-size: 16px">Case transparente</span>
+<span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72)">Protege sem esconder a cor original do seu aparelho.</span>
+</div>
+</a>
+
+<a class="slide glass lift" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vi%20no%20site%20e%20quero%20saber%20mais%20sobre%3A%20Bast%C3%A3o%20de%20selfie%20com%20trip%C3%A9" target="_blank" rel="noopener" style="border-radius: 28px; padding: 8px; display: flex; flex-direction: column; color: #fff">
+<div class="zoom" style="position: relative; border-radius: 22px; aspect-ratio: 1 / 1; background: #8e0a14">
+<video src="media/v30.mp4" poster="media/v30.jpg" muted loop playsinline autoplay preload="none" aria-label="Bastão de selfie com tripé" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px"></video>
+</div>
+<div style="padding: 16px 12px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff4d5a">Acessórios</span>
+<span style="font-weight: 800; font-size: 16px">Bastão de selfie com tripé</span>
+<span style="font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72)">Fotos e vídeos sem tremer. Ideal para gravar conteúdo.</span>
+</div>
+</a>
+
+</div>
+</div>
+</section>
+
+<!-- ========== SACOLA CHEIA ========== -->
+<section aria-labelledby="t-sacola" style="padding: clamp(40px, 5vw, 64px) 0 clamp(80px, 9vw, 128px)">
+<div class="wrap" style="max-width: 1240px; margin: 0 auto; padding-block: 0">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 36px">
+<h2 id="t-sacola" class="rv" style="font-size: clamp(32px, 4.6vw, 64px); line-height: 1.02; font-weight: 700; letter-spacing: -.035em; max-width: 820px">Aqui você sai de sacola cheia <span style="color: #ffe1e3">e satisfação.</span></h2>
+<p class="rv s1" style="max-width: 360px; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,.76)">Atendimento de perto, produto bem escolhido e aquele cuidado na hora de embalar. Do balcão direto pra sua mão.</p>
+</div>
+<div class="g-feat" style="display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 18px">
+<figure class="big glass rv rv-s zoom" style="margin: 0; grid-row: 1 / 3; border-radius: 32px; padding: 10px; position: relative">
+<img src="media/sacola.jpg" alt="Cliente segurando a sacola branca da Power dentro da loja" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 24px">
+</figure>
+<figure class="glass rv rv-r s1 zoom" style="margin: 0; border-radius: 28px; padding: 8px">
+<img src="media/cases.jpg" alt="Cases de couro roxa, caramelo e off-white com a sacola Power" style="width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 22px">
+</figure>
+<figure class="glass rv rv-r s2 zoom" style="margin: 0; border-radius: 28px; padding: 8px">
+<img src="media/fones.jpg" alt="Fones de ouvido sem fio em várias cores com a sacola Power" style="width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 22px">
+</figure>
+</div>
+</div>
+</section>
+
+<!-- ========== REPAROS ========== -->
+<section id="reparos" aria-labelledby="t-reparos" style="padding: clamp(80px, 9vw, 128px) 0; position: relative">
+<div class="wrap" style="max-width: 1240px; margin: 0 auto; padding-block: 0">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px; margin-bottom: 40px">
+<p class="rv" style="font-size: 13px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #ffe1e3">Assistência técnica</p>
+<h2 id="t-reparos" class="rv s1" style="font-size: clamp(32px, 4.2vw, 56px); line-height: 1.05; font-weight: 700; letter-spacing: -.03em">Reparo de celular feito na sua frente, explicado em cada etapa.</h2>
+<p class="rv s2" style="font-size: 17px; line-height: 1.65; color: rgba(255,255,255,.76)">Bancada equipada, ferramentas certas e transparência do diagnóstico à entrega. Você acompanha, pergunta e decide.</p>
+</div>
+
+<div class="g-feat" style="display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 18px; margin-bottom: 18px">
+<figure class="big glass rv rv-s" style="margin: 0; grid-row: 1 / 3; border-radius: 32px; padding: 10px; position: relative">
+<video src="media/reparo2.mp4" poster="media/reparo2.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Técnico trocando a bateria de um iPhone 11 Pro Max" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 24px"></video>
+</figure>
+<figure class="glass rv rv-r s1" style="margin: 0; border-radius: 28px; padding: 8px; position: relative">
+<video src="media/reparo1.mp4" poster="media/reparo1.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Troca de vidro traseiro de iPhone na bancada" style="width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 22px"></video>
+</figure>
+<figure class="glass rv rv-r s2" style="margin: 0; border-radius: 28px; padding: 8px; position: relative">
+<video src="media/reparo3.mp4" poster="media/reparo3.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Troca do verso e da tela de um iPhone XR" style="width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 22px"></video>
+</figure>
+</div>
+<p class="rv" style="margin: 0 0 56px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,.7); display: flex; flex-wrap: wrap; gap: 8px 20px"><span>Na bancada:</span><span style="color: #fff">Troca de bateria · iPhone 11 Pro Max</span><span style="color: #fff">Troca do vidro traseiro</span><span style="color: #fff">iPhone XR · verso e tela</span></p>
+
+<div style="display: flex; flex-wrap: wrap; gap: clamp(28px, 4vw, 56px); align-items: flex-start">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<h3 class="rv" style="font-size: clamp(24px, 2.4vw, 32px); font-weight: 600; line-height: 1.15; letter-spacing: -.02em">Como funciona</h3>
+<div class="glass rv s1" style="border-radius: 24px; padding: 22px; display: flex; gap: 16px">
+<span class="disp" style="flex: none; width: 44px; height: 44px; border-radius: 14px; background: #fff; color: #81020b; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700">1</span>
+<div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-size: 17px">Diagnóstico</strong><span style="color: rgba(255,255,255,.74); line-height: 1.55; font-size: 15px">Avaliamos o aparelho e mostramos exatamente o que está acontecendo.</span></div>
+</div>
+<div class="glass rv s2" style="border-radius: 24px; padding: 22px; display: flex; gap: 16px">
+<span class="disp" style="flex: none; width: 44px; height: 44px; border-radius: 14px; background: #fff; color: #81020b; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700">2</span>
+<div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-size: 17px">Orçamento claro</strong><span style="color: rgba(255,255,255,.74); line-height: 1.55; font-size: 15px">Valor e prazo antes de qualquer serviço. Sem surpresa no final.</span></div>
+</div>
+<div class="glass rv s3" style="border-radius: 24px; padding: 22px; display: flex; gap: 16px">
+<span class="disp" style="flex: none; width: 44px; height: 44px; border-radius: 14px; background: #fff; color: #81020b; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700">3</span>
+<div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-size: 17px">Reparo e entrega</strong><span style="color: rgba(255,255,255,.74); line-height: 1.55; font-size: 15px">Só começamos com o seu ok. Retire na loja ou receba em casa.</span></div>
+</div>
+<a class="btn btn-w rv s4" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Quero%20um%20or%C3%A7amento%20de%20conserto.%20Meu%20aparelho%20%C3%A9%3A%20" target="_blank" rel="noopener" style="align-self: flex-start; margin-top: 6px">Mandar o defeito pelo WhatsApp <span class="arr" aria-hidden="true">→</span></a>
+</div>
+
+<div class="glass rv rv-r" style="flex: 1.6 1 520px; min-width: 0; border-radius: 32px; padding: clamp(20px, 3vw, 36px)">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 18px; flex-wrap: wrap">
+<h3 style="font-size: clamp(22px, 2.2vw, 28px); font-weight: 600; letter-spacing: -.02em">12 serviços para o seu celular</h3>
+<span style="font-size: 13px; color: rgba(255,255,255,.6); font-weight: 600">iPhone, Samsung, Motorola, Xiaomi e outras</span>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 10px">
+
+<li class="svc" style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04)">
+<span class="ic2" aria-hidden="true" title="01"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"></rect><path d="M10 7l2.5 3-2 2 3 3.5"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 3px"><strong style="font-size: 15px">Troca de tela</strong><span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.65)">Display trincado, manchado ou sem toque.</span></span>
+</li>
+
+<li class="svc" style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04)">
+<span class="ic2" aria-hidden="true" title="02"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="7" width="17" height="10" rx="2"></rect><path d="M21.5 10.5v3"></path><path d="M11.5 9l-2 3h3l-2 3"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 3px"><strong style="font-size: 15px">Troca de bateria</strong><span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.65)">Para o celular que descarrega rápido ou desliga sozinho.</span></span>
+</li>
+
+<li class="svc" style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04)">
+<span class="ic2" aria-hidden="true" title="03"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"></rect><rect x="8.5" y="5" width="4.5" height="4.5" rx="1.2"></rect><circle cx="10.75" cy="7.25" r=".6" fill="currentColor"></circle></svg></span>
+<span style="display: flex; flex-direction: column; gap: 3px"><strong style="font-size: 15px">Troca de vidro traseiro</strong><span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.65)">Verso quebrado com acabamento como novo.</span></span>
+</li>
+
+<li class="svc" style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04)">
+<span class="ic2" aria-hidden="true" title="04"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2.5v4M15 2.5v4"></path><path d="M7 6.5h10v4a5 5 0 0 1-10 0z"></path><path d="M12 15.5v6"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 3px"><strong style="font-size: 15px">Conector de carga</strong><span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.65)">Quando o cabo não encaixa ou não carrega.</span></span>
+</li>
+
+<li class="svc" style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04)">
+<span class="ic2" aria-hidden="true" title="05"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5a2 2 0 0 1 2-2h2.5l1.5-2h6l1.5 2H19a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><circle cx="12" cy="13" r="3.5"></circle></svg></span>
+<span style="display: flex; flex-direction: column; gap: 3px"><strong style="font-size: 15px">Câmeras traseira e frontal</strong><span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.65)">Foto embaçada, tremida ou sem imagem.</span></span>
+</li>
+
+<li class="svc" style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04)">
+<span class="ic2" aria-hidden="true" title="06"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 3l3.5 6M21 12h-7M16.5 19.8L13 13.5M7.5 19.8L11 13.5M3 12h7M8.5 4.2L12 10.5"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 3px"><strong style="font-size: 15px">Lente da câmera</strong><span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.65)">Vidro da lente trincado ou riscado.</span></span>
+</li>
+
+<li class="svc" style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04)">
+<span class="ic2" aria-hidden="true" title="07"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2.5" width="6" height="11" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5v4M9 21.5h6"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 3px"><strong style="font-size: 15px">Alto-falante e microfone</strong><span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.65)">Som baixo, chiado ou ninguém te escuta.</span></span>
+</li>
+
+<li class="svc" style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04)">
+<span class="ic2" aria-hidden="true" title="08"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M19.5 7v3M19.5 12v2M3.5 8c-1 1.3-1 6.7 0 8M5.5 10c-.4.8-.4 3.2 0 4"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 3px"><strong style="font-size: 15px">Botões e vibração</strong><span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.65)">Power, volume e motor de vibração.</span></span>
+</li>
+
+<li class="svc" style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04)">
+<span class="ic2" aria-hidden="true" title="09"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8s6 6.6 6 11.2a6 6 0 0 1-12 0c0-4.6 6-11.2 6-11.2z"></path><path d="M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 3px"><strong style="font-size: 15px">Celular molhado</strong><span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.65)">Limpeza e avaliação após contato com líquido.</span></span>
+</li>
+
+<li class="svc" style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04)">
+<span class="ic2" aria-hidden="true" title="10"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.3-4.6L4 8M4 3.5V8h4.5M4 13a8 8 0 0 0 14.3 4.6L20 16M20 20.5V16h-4.5"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 3px"><strong style="font-size: 15px">Sistema e software</strong><span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.65)">Travamentos, atualização e restauração.</span></span>
+</li>
+
+<li class="svc" style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04)">
+<span class="ic2" aria-hidden="true" title="11"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18.5a4.5 4.5 0 0 1-.6-9A6 6 0 0 1 18 8.5a4 4 0 0 1-.5 8"></path><path d="M12 20.5v-8M9 15l3-3 3 3"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 3px"><strong style="font-size: 15px">Backup e transferência</strong><span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.65)">Leve fotos e contatos para o aparelho novo.</span></span>
+</li>
+
+<li class="svc" style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04)">
+<span class="ic2" aria-hidden="true" title="12"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 3px"><strong style="font-size: 15px">Película e higienização</strong><span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.65)">Aplicação na hora e limpeza completa.</span></span>
+</li>
+
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ========== GARRAFAS ========== -->
+<section class="band band-black" id="garrafas" aria-labelledby="t-garrafas" style="padding: clamp(80px, 9vw, 128px) 0">
+<div class="wrap" style="max-width: 1240px; margin: 0 auto; padding-block: 0; display: flex; flex-wrap: wrap; gap: clamp(32px, 4vw, 56px); align-items: center">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<p class="rv" style="font-size: 13px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #ff4d5a">Garrafas personalizadas</p>
+<h2 id="t-garrafas" class="rv s1" style="font-size: clamp(32px, 4.2vw, 56px); line-height: 1.05; font-weight: 700; letter-spacing: -.03em">A garrafa é sua. O nome também.</h2>
+<p class="rv s2" style="font-size: 17px; line-height: 1.65; color: rgba(255,255,255,.76)">Garrafas térmicas em várias cores e tamanhos, gravadas com nome, desenho, frase ou logotipo. Presente de aniversário, lembrança de família ou brinde da sua empresa.</p>
+<ul class="rv s3" style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+<li style="display: flex; gap: 12px; align-items: center; font-weight: 600"><span style="width: 30px; height: 30px; border-radius: 10px; background: rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; flex: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg></span>Gravação com nome, desenho ou logo</li>
+<li style="display: flex; gap: 12px; align-items: center; font-weight: 600"><span style="width: 30px; height: 30px; border-radius: 10px; background: rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; flex: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg></span>Várias cores e modelos à pronta entrega</li>
+<li style="display: flex; gap: 12px; align-items: center; font-weight: 600"><span style="width: 30px; height: 30px; border-radius: 10px; background: rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; flex: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg></span>Pedidos para empresas e eventos</li>
+</ul>
+<a class="btn btn-w rv s4" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Quero%20uma%20garrafa%20personalizada." target="_blank" rel="noopener" style="align-self: flex-start">Personalizar a minha garrafa <span class="arr" aria-hidden="true">→</span></a>
+</div>
+<div class="g-feat" style="flex: 1.4 1 560px; min-width: 0; display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px">
+<figure class="big glass rv rv-s zoom" style="margin: 0; grid-row: 1 / 3; border-radius: 28px; padding: 8px; position: relative">
+<img src="media/garrafa5.jpg" alt="Garrafa térmica rosé de 1 litro gravada com nome e desenho de família" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22px">
+</figure>
+<figure class="glass rv s1 zoom" style="margin: 0; border-radius: 22px; padding: 6px"><img src="media/garrafa1.jpg" alt="Três garrafas térmicas em azul, lilás e rosa" style="width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 17px"></figure>
+<figure class="glass rv s2 zoom" style="margin: 0; border-radius: 22px; padding: 6px"><img src="media/garrafa4.jpg" alt="Garrafa rosa com estampa de laços" style="width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 17px"></figure>
+<figure class="glass rv s3 zoom" style="margin: 0; border-radius: 22px; padding: 6px"><img src="media/garrafa2.jpg" alt="Cinco garrafas térmicas em tons terrosos e rosa" style="width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 17px"></figure>
+<figure class="glass rv s4 zoom" style="margin: 0; border-radius: 22px; padding: 6px"><img src="media/garrafa3.jpg" alt="Quatro garrafas térmicas bicolores com alça" style="width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 17px"></figure>
+</div>
+</div>
+</section>
+
+<!-- ========== SOBRE ========== -->
+<section id="sobre" aria-labelledby="t-sobre" style="padding: clamp(80px, 9vw, 128px) 0">
+<div class="wrap" style="max-width: 1240px; margin: 0 auto; padding-block: 0">
+<div class="glass rv rv-s" style="border-radius: 40px; padding: clamp(16px, 2.4vw, 28px); display: flex; flex-wrap: wrap; gap: clamp(24px, 4vw, 56px); align-items: center">
+<div class="zoom" style="flex: 1 1 420px; min-width: 0; border-radius: 30px; position: relative">
+<img src="media/ceos.jpg" alt="Mayra Garcia e Jefferson Santos, fundadores da Power Cases" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 30px">
+<div class="glass" style="margin-top: 14px; border-radius: 22px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap">
+<span style="font-weight: 800">Power Cases</span>
+<span style="font-size: 12px; font-weight: 800; letter-spacing: .16em; color: rgba(255,255,255,.8)">GEISEL · JOÃO PESSOA</span>
+</div>
+</div>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 22px; padding: clamp(4px, 2vw, 24px)">
+<p style="font-size: 13px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #ffe1e3">Quem comanda a Power</p>
+<h2 id="t-sobre" style="font-size: clamp(34px, 4.4vw, 60px); line-height: 1.02; font-weight: 700; letter-spacing: -.035em">Mayra Garcia <span style="color: #ffe1e3">&amp;</span> Jefferson Santos</h2>
+<p style="font-size: 13px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.7)">CEOs da Power Cases</p>
+<p style="font-size: 18px; line-height: 1.65; color: rgba(255,255,255,.82); max-width: 480px">Eles atendem de perto, explicam cada conserto e ajudam você a escolher o acessório certo.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px">
+<a class="btn btn-w" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vim%20pelo%20site." target="_blank" rel="noopener">Falar com a equipe <span class="arr" aria-hidden="true">→</span></a>
+<a class="btn btn-g glass" href="https://www.instagram.com/powercasesjp/" target="_blank" rel="noopener">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"></circle></svg>
+@powercasesjp
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ========== ENTREGAS ========== -->
+<section id="entregas" aria-labelledby="t-entregas" style="padding: clamp(56px, 6vw, 88px) 0">
+<div class="wrap" style="max-width: 1240px; margin: 0 auto; padding-block: 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px">
+<p class="rv" style="font-size: 13px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #ffe1e3">Delivery</p>
+<h2 id="t-entregas" class="rv s1" style="font-size: clamp(32px, 4.4vw, 60px); line-height: 1.04; font-weight: 700; letter-spacing: -.035em; max-width: 900px">Não pode vir até a loja? A Power vai até você.</h2>
+<p class="rv s2" style="font-size: 17px; line-height: 1.65; color: rgba(255,255,255,.76); max-width: 620px">Faça o pedido pelo WhatsApp e combine a entrega em uma das cidades atendidas.</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 12px">
+<div class="glass lift rv s1" style="border-radius: 999px; padding: 14px 24px 14px 16px; display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 17px"><span style="width: 38px; height: 38px; border-radius: 50%; background: #fff; color: #81020b; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"></path><circle cx="12" cy="10" r="2.4"></circle></svg></span>João Pessoa</div>
+<div class="glass lift rv s2" style="border-radius: 999px; padding: 14px 24px 14px 16px; display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 17px"><span style="width: 38px; height: 38px; border-radius: 50%; background: #fff; color: #81020b; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"></path><circle cx="12" cy="10" r="2.4"></circle></svg></span>Santa Rita</div>
+<div class="glass lift rv s3" style="border-radius: 999px; padding: 14px 24px 14px 16px; display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 17px"><span style="width: 38px; height: 38px; border-radius: 50%; background: #fff; color: #81020b; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"></path><circle cx="12" cy="10" r="2.4"></circle></svg></span>Bayeux</div>
+<div class="glass lift rv s4" style="border-radius: 999px; padding: 14px 24px 14px 16px; display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 17px"><span style="width: 38px; height: 38px; border-radius: 50%; background: #fff; color: #81020b; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"></path><circle cx="12" cy="10" r="2.4"></circle></svg></span>Cabedelo</div>
+</div>
+<a class="btn btn-r rv s3" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Quero%20fazer%20um%20pedido%20com%20entrega." target="_blank" rel="noopener" style="margin-top: 14px">Pedir com entrega <span class="arr" aria-hidden="true">→</span></a>
+</div>
+</section>
+
+<!-- ========== LOCALIZAÇÃO ========== -->
+<section id="localizacao" aria-labelledby="t-local" style="padding: clamp(80px, 9vw, 128px) 0">
+<div class="wrap" style="max-width: 1240px; margin: 0 auto; padding-block: 0">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 36px">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<p class="rv" style="font-size: 13px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #ffe1e3">Localização</p>
+<h2 id="t-local" class="rv s1" style="font-size: clamp(32px, 4.2vw, 56px); line-height: 1.05; font-weight: 700; letter-spacing: -.03em">Venha conhecer a loja no Geisel.</h2>
+</div>
+<address class="rv s2" style="font-style: normal; font-size: 16px; line-height: 1.6; color: rgba(255,255,255,.8); max-width: 360px">Av. Valdemar Naziazeno, 547 — Ernesto Geisel<br>João Pessoa – PB, 58075-000</address>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 18px; margin-bottom: 18px">
+<figure class="glass rv rv-l zoom" style="margin: 0; border-radius: 32px; padding: 10px; position: relative">
+<img src="media/fachada.jpg" alt="Fachada da loja Power no Geisel, com letreiro e vitrine" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 24px">
+<figcaption class="glass" style="margin-top: 10px; min-height: 64px; border-radius: 20px; padding: 8px 18px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap">
+<span style="font-weight: 800">Procure o letreiro preto e vermelho</span>
+<span style="font-size: 13px; color: rgba(255,255,255,.8)">Nº 547</span>
+</figcaption>
+</figure>
+
+<a class="glass rv rv-r lift" href="https://www.google.com/maps/search/?api=1&amp;query=Power%20Celular%20Assist%C3%AAncia%20T%C3%A9cnica%2C%20Av.%20Valdemar%20Naziazeno%2C%20547%20-%20Ernesto%20Geisel%2C%20Jo%C3%A3o%20Pessoa%20-%20PB" target="_blank" rel="noopener" aria-label="Abrir a localização da Power Cases no Google Maps" style="border-radius: 32px; padding: 10px; position: relative; display: block; color: #fff">
+<div style="position: relative; width: 100%; aspect-ratio: 1 / 1; border-radius: 24px; overflow: hidden; background: #8e0a14">
+<svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%">
+<rect width="600" height="600" fill="#8e0a14"></rect>
+<g fill="rgba(255,255,255,.045)">
+<rect x="30" y="30" width="150" height="110" rx="10"></rect><rect x="210" y="30" width="120" height="110" rx="10"></rect><rect x="360" y="30" width="210" height="110" rx="10"></rect>
+<rect x="30" y="170" width="150" height="130" rx="10"></rect><rect x="210" y="170" width="120" height="70" rx="10"></rect><rect x="360" y="170" width="90" height="130" rx="10"></rect><rect x="480" y="170" width="90" height="130" rx="10"></rect>
+<rect x="30" y="380" width="150" height="90" rx="10"></rect><rect x="210" y="380" width="240" height="90" rx="10"></rect><rect x="480" y="380" width="90" height="190" rx="10"></rect>
+<rect x="30" y="500" width="150" height="70" rx="10"></rect><rect x="210" y="500" width="240" height="70" rx="10"></rect>
+</g>
+<rect x="390" y="200" width="40" height="60" rx="6" fill="rgba(255,255,255,.12)"></rect>
+<g stroke="rgba(255,255,255,.14)" stroke-width="10" fill="none" stroke-linecap="round">
+<path d="M195 0V600M345 0V600M465 0V600M0 155H600M0 485H600"></path>
+</g>
+<path d="M-20 340 C 150 330, 300 350, 620 325" stroke="rgba(255,255,255,.3)" stroke-width="26" fill="none" stroke-linecap="round"></path>
+<path d="M-20 340 C 150 330, 300 350, 620 325" stroke="rgba(255,143,151,.55)" stroke-width="2" stroke-dasharray="10 12" fill="none"></path>
+<text x="40" y="318" fill="rgba(255,255,255,.62)" font-family="Manrope, sans-serif" font-size="15" font-weight="700" letter-spacing="1">AV. VALDEMAR NAZIAZENO</text>
+<text x="212" y="210" fill="rgba(255,255,255,.35)" font-family="Manrope, sans-serif" font-size="12" font-weight="700" letter-spacing="1">ERNESTO GEISEL</text>
+</svg>
+<div style="position: absolute; left: 50%; top: 52%; transform: translate(-50%, -100%); display: flex; flex-direction: column; align-items: center">
+<span class="ping" style="position: absolute; bottom: -10px; width: 30px; height: 30px; border-radius: 50%; background: rgba(255,69,82,.6)"></span>
+<svg width="64" height="78" viewBox="0 0 64 78" aria-hidden="true" style="position: relative; filter: drop-shadow(0 12px 18px rgba(0,0,0,.5))"><path d="M32 76S4 47 4 30a28 28 0 0 1 56 0c0 17-28 46-28 46z" fill="#fff"></path><circle cx="32" cy="30" r="16" fill="#81020b"></circle><path d="M27 26.5a7.5 7.5 0 1 0 10 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"></path><line x1="32" y1="22" x2="32" y2="30" stroke="#fff" stroke-width="3" stroke-linecap="round"></line></svg>
+</div>
+</div>
+<div class="glass" style="margin-top: 10px; min-height: 64px; border-radius: 20px; padding: 8px 8px 8px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap">
+<span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 15px">Power Cases · Geisel</strong><span style="font-size: 13px; color: rgba(255,255,255,.75)">Av. Valdemar Naziazeno, 547</span></span>
+<span class="btn btn-w" style="min-height: 48px">Abrir no Google Maps <span class="arr" aria-hidden="true">→</span></span>
+</div>
+</a>
+</div>
+
+<div class="glass rv" style="border-radius: 32px; padding: clamp(20px, 3vw, 32px); display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 40px); align-items: center">
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="width: 48px; height: 48px; border-radius: 16px; background: #fff; color: #81020b; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+<h3 style="font-size: 22px; font-weight: 600; letter-spacing: -.01em">Horário de funcionamento</h3>
+</div>
+<div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; border-radius: 999px; padding: 8px 14px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); font-weight: 700; font-size: 14px">
+<span style="position: relative; width: 10px; height: 10px; display: inline-block"><span class="ping" style="position: absolute; inset: 0; border-radius: 50%; background: var(--status)"></span><span style="position: absolute; inset: 0; border-radius: 50%; background: var(--status)"></span></span>
+<span class="js-status">Seg a Sex 9h–19h · Sáb 9h–16h</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px">
+<a class="btn btn-w" href="https://www.google.com/maps/dir/?api=1&amp;destination=Av.%20Valdemar%20Naziazeno%2C%20547%20-%20Ernesto%20Geisel%2C%20Jo%C3%A3o%20Pessoa%20-%20PB%2C%2058075-000" target="_blank" rel="noopener" style="min-height: 48px">Traçar rota <span class="arr" aria-hidden="true">→</span></a>
+<a class="btn btn-g glass" href="tel:+5583996081179" style="min-height: 48px">(83) 99608-1179</a>
+</div>
+</div>
+<ul style="flex: 2 1 520px; min-width: 0; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 10px">
+
+<li class="hr" data-day="1">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; opacity: .8">Segunda</span>
+<span style="font-size: 16px; font-weight: 800">09:00–19:00</span>
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #ffe1e3; min-height: 14px"></span>
+</li>
+
+<li class="hr" data-day="2">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; opacity: .8">Terça</span>
+<span style="font-size: 16px; font-weight: 800">09:00–19:00</span>
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #ffe1e3; min-height: 14px"></span>
+</li>
+
+<li class="hr" data-day="3">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; opacity: .8">Quarta</span>
+<span style="font-size: 16px; font-weight: 800">09:00–19:00</span>
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #ffe1e3; min-height: 14px"></span>
+</li>
+
+<li class="hr" data-day="4">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; opacity: .8">Quinta</span>
+<span style="font-size: 16px; font-weight: 800">09:00–19:00</span>
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #ffe1e3; min-height: 14px"></span>
+</li>
+
+<li class="hr" data-day="5">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; opacity: .8">Sexta</span>
+<span style="font-size: 16px; font-weight: 800">09:00–19:00</span>
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #ffe1e3; min-height: 14px"></span>
+</li>
+
+<li class="hr" data-day="6">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; opacity: .8">Sábado</span>
+<span style="font-size: 16px; font-weight: 800">09:00–16:00</span>
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #ffe1e3; min-height: 14px"></span>
+</li>
+
+<li class="hr closed" data-day="0">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; opacity: .8">Domingo</span>
+<span style="font-size: 16px; font-weight: 800">Fechado</span>
+<span style="font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #ffe1e3; min-height: 14px"></span>
+</li>
+
+</ul>
+</div>
+</div>
+</section>
+
+<!-- ========== CTA FINAL ========== -->
+<section aria-labelledby="t-cta" style="padding: clamp(40px, 5vw, 64px) 0 clamp(80px, 9vw, 120px)">
+<div class="wrap" style="max-width: 1240px; margin: 0 auto; padding-block: 0">
+<div class="rv rv-s" style="position: relative; overflow: hidden; border-radius: 44px; padding: clamp(40px, 6vw, 88px) clamp(24px, 5vw, 72px); background: linear-gradient(140deg, rgba(255,255,255,.12), rgba(255,255,255,.03) 60%), radial-gradient(120% 140% at 100% 0%, rgba(239,22,38,.45), rgba(176,13,24,0) 60%); border: 1px solid rgba(255,255,255,.18); -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px); box-shadow: 0 50px 120px -40px rgba(255,42,54,.5), inset 0 1px 0 rgba(255,255,255,.3)">
+<svg class="spin hide-m" width="520" height="520" viewBox="0 0 120 120" aria-hidden="true" style="position: absolute; right: -160px; top: -160px; opacity: .1"><path d="M38 34a34 34 0 1 0 44 0" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"></path><line x1="60" y1="16" x2="60" y2="56" stroke="#fff" stroke-width="10" stroke-linecap="round"></line></svg>
+<div style="position: relative; display: flex; flex-direction: column; gap: 22px; max-width: 720px">
+<h2 id="t-cta" style="font-size: clamp(32px, 4.6vw, 64px); line-height: 1.02; font-weight: 700; letter-spacing: -.035em">Seu celular merece a energia da Power.</h2>
+<p style="font-size: 18px; line-height: 1.6; color: rgba(255,255,255,.85)">Mande uma mensagem agora: orçamento, modelo de case ou garrafa personalizada. A gente responde rapidinho.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a class="btn btn-w" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vim%20pelo%20site." target="_blank" rel="noopener">Chamar a Power no WhatsApp <span class="arr" aria-hidden="true">→</span></a>
+<a class="btn btn-g glass" href="https://www.google.com/maps/dir/?api=1&amp;destination=Av.%20Valdemar%20Naziazeno%2C%20547%20-%20Ernesto%20Geisel%2C%20Jo%C3%A3o%20Pessoa%20-%20PB%2C%2058075-000" target="_blank" rel="noopener">Ir até a loja</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer style="border-top: 1px solid rgba(255,255,255,.1); padding: 48px 0 40px">
+<div class="wrap" style="max-width: 1240px; margin: 0 auto; padding-block: 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 320px">
+<div style="display: flex; align-items: center; gap: 12px">
+<svg width="34" height="46" viewBox="0 0 60 80" aria-hidden="true"><g transform="rotate(-10 30 40)"><rect x="12" y="6" width="36" height="68" rx="8" fill="#a8101b" stroke="#fff" stroke-width="4.5"></rect><path d="M24.5 34.5a9 9 0 1 0 11 0" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"></path><line x1="30" y1="29" x2="30" y2="40" stroke="#fff" stroke-width="4" stroke-linecap="round"></line></g></svg>
+<span style="display: flex; flex-direction: column; line-height: 1"><span class="disp" style="font-size: 20px; font-weight: 700">POWER</span><span style="font-size: 10px; font-weight: 700; letter-spacing: .42em; color: rgba(255,255,255,.75); margin-top: 4px">CASES</span></span>
+</div>
+<p style="font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.65)">Assistência técnica e acessórios para celular no Geisel, João Pessoa.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px">
+<strong style="font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.6)">Contato</strong>
+<a class="link-u" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vim%20pelo%20site." target="_blank" rel="noopener" style="align-self: flex-start">WhatsApp (83) 99608-1179</a>
+<a class="link-u" href="https://www.instagram.com/powercasesjp/" target="_blank" rel="noopener" style="align-self: flex-start">Instagram @powercasesjp</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: rgba(255,255,255,.78)">
+<strong style="font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.6)">Endereço</strong>
+<span>Av. Valdemar Naziazeno, 547</span>
+<span>Ernesto Geisel · João Pessoa – PB</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: rgba(255,255,255,.78)">
+<strong style="font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.6)">Horário</strong>
+<span>Seg a Sex · 09:00 – 19:00</span>
+<span>Sábado · 09:00 – 16:00</span>
+<span>Domingo · Fechado</span>
+</div>
+</div>
+<div style="max-width: 1240px; margin: 36px auto 0; padding: 20px 24px 0; border-top: 1px solid rgba(255,255,255,.08); font-size: 13px; color: rgba(255,255,255,.5)">© 2026 Power Cases · Mayra Garcia &amp; Jefferson Santos</div>
+</footer>
+
+</div>
+
+<!-- Floating WhatsApp -->
+<a class="wa-fab" href="https://wa.me/5583996081179?text=Ol%C3%A1%2C%20Power%20Cases%21%20Vim%20pelo%20site." target="_blank" rel="noopener" aria-label="Falar com a Power Cases no WhatsApp" style="position: fixed; right: calc(20px + env(safe-area-inset-right, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 60; width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(180deg, #b3121e, #81020b); border: 1px solid rgba(255,255,255,.3); display: flex; align-items: center; justify-content: center; box-shadow: 0 18px 40px -10px rgba(255,69,82,.7)">
+<span class="ring" aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(255,69,82,.7)"></span>
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.4-4.2A8.5 8.5 0 1 1 8 19.4z"></path><path d="M9 9.5c.3 2 2.2 4.3 4.6 5 .8.2 1.7-.5 1.9-1.2l-1.8-.9-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-.9-1.8c-.7.2-1.4 1-1.2 1.5z" fill="#fff" stroke="none"></path></svg>
+</a>
+
+</div>
+<script>
+(function(){
+  var root=document.querySelector('.pc');
+  // Status + horário (America/Fortaleza, UTC-3)
+  function upd(){
+    var now=new Date(Date.now()-3*3600*1000), day=now.getUTCDay(), min=now.getUTCHours()*60+now.getUTCMinutes();
+    var S={0:null,1:[540,1140],2:[540,1140],3:[540,1140],4:[540,1140],5:[540,1140],6:[540,960]};
+    var N=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+    var f=function(m){return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')};
+    var t=S[day], open=!!(t&&min>=t[0]&&min<t[1]), txt;
+    if(open) txt='Aberto agora · fecha às '+f(t[1]);
+    else if(t&&min<t[0]) txt='Fechado agora · abre hoje às '+f(t[0]);
+    else { var d=day,a=0; do{d=(d+1)%7;a++}while(!S[d]&&a<7); txt='Fechado agora · abre '+(a===1?'amanhã':N[d])+' às '+f(S[d][0]); }
+    document.querySelectorAll('.js-status').forEach(function(el){el.textContent=txt});
+    root.style.setProperty('--status',open?'#41e08c':'#ff6b74');
+    document.querySelectorAll('.hr').forEach(function(li){li.classList.toggle('today',+li.dataset.day===day)});
+  }
+  upd(); setInterval(upd,60000);
+  // Carrossel
+  var track=document.getElementById('track');
+  document.querySelectorAll('[data-dir]').forEach(function(b){b.addEventListener('click',function(){
+    var s=track.querySelector('.slide'), step=s?s.getBoundingClientRect().width+20:320, per=Math.max(1,Math.floor(track.clientWidth/step));
+    track.scrollBy({left:+b.dataset.dir*step*per,behavior:'smooth'});
+  })});
+  // Vídeos: sem som, tocam só quando visíveis
+  var vids=document.querySelectorAll('video');
+  vids.forEach(function(v){v.muted=true;v.defaultMuted=true;v.setAttribute('playsinline','')});
+  var play=function(v){var p=v.play();if(p&&p.catch)p.catch(function(){})};
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?play(e.target):e.target.pause()})},{threshold:.25});
+    vids.forEach(function(v){io.observe(v)});
+  } else vids.forEach(play);
+})();
+</script>
+</body>
+</html>
